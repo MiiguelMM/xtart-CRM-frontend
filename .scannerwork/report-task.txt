@@ -1,0 +1,6 @@
+projectKey=React23
+serverUrl=http://localhost:9000
+serverVersion=25.4.0.105899
+dashboardUrl=http://localhost:9000/dashboard?id=React23
+ceTaskId=20e41393-6b08-46fa-a36c-cf78994b7133
+ceTaskUrl=http://localhost:9000/api/ce/task?id=20e41393-6b08-46fa-a36c-cf78994b7133

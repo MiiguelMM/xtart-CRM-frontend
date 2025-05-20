@@ -1,0 +1,405 @@
+/* WelcomePage.css - Estilos para la página de bienvenida */
+
+:root {
+  --primary-color: #1a4f8b;
+  --secondary-color: #2d6cb0;
+  --accent-color: #3d8ad8;
+  --accent-glow: #4fc3f7;
+  --light-blue: #e9f0f9;
+  --dark-blue: #0a2e55;
+  --darker-blue: #061c34;
+  --text-color: #e0e6ef;
+  --text-light: #a0b4cc;
+  --white: #ffffff;
+  --border-color: rgba(61, 138, 216, 0.2);
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --neon-glow: 0 0 10px rgba(79, 195, 247, 0.6), 0 0 20px rgba(79, 195, 247, 0.3);
+}
+
+/* Base y Fondo */
+.welcome-page {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #091828;
+  color: var(--text-color);
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Efectos de Fondo */
+.background-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.tech-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(30, 87, 153, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 87, 153, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+}
+
+.floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(61, 138, 216, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.floating-particles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(79, 195, 247, 0.15) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: floatParticles 30s infinite linear;
+}
+
+@keyframes floatParticles {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary-color), var(--dark-blue));
+  padding: 20px 0;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(79, 195, 247, 0.3);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+  animation: scanline 4s infinite linear;
+}
+
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Contenedor General */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header y Logo */
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.4);
+  border: 1px solid rgba(79, 195, 247, 0.4);
+  overflow: hidden;
+}
+
+.logo-icon {
+  color: var(--accent-glow);
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: var(--neon-glow);
+}
+
+.header-title {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.company-name {
+  font-weight: 700;
+  color: var(--accent-glow);
+  text-shadow: var(--neon-glow);
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1;
+  padding: 40px 0;
+}
+
+.welcome-container {
+  background-color: rgba(10, 46, 85, 0.6);
+  border-radius: 12px;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 1000px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(79, 195, 247, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.welcome-title {
+  color: var(--white);
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 15px rgba(79, 195, 247, 0.4);
+}
+
+.welcome-intro {
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.welcome-intro-text {
+  color: var(--text-light);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Tarjetas de información */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 40px 0;
+}
+
+.info-card {
+  background-color: rgba(10, 30, 60, 0.4);
+  border-radius: 10px;
+  padding: 25px;
+  border: 1px solid rgba(79, 195, 247, 0.2);
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(79, 195, 247, 0.4);
+  box-shadow: 0 10px 25px rgba(61, 138, 216, 0.3);
+}
+
+.welcome-card-title {
+  color: var(--accent-glow);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+  padding-bottom: 10px;
+  text-shadow: 0 0 8px rgba(79, 195, 247, 0.3);
+}
+
+.card-text {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.card-list {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-size: 15px;
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+.card-list-item {
+  margin-bottom: 8px;
+}
+
+/* Insignias de tecnología */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.tech-badge {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(79, 195, 247, 0.3);
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+}
+
+/* Botón de acción */
+.welcome-action {
+  margin: 40px 0 20px;
+}
+
+.dashboard-btn {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(79, 195, 247, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.dashboard-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(79, 195, 247, 0.4);
+}
+
+.dashboard-btn:hover::before {
+  animation: shine-button 1.5s;
+  opacity: 1;
+}
+
+.arrow-icon {
+  margin-left: 5px;
+}
+
+@keyframes shine-button {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Pie de bienvenida */
+.welcome-footer {
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+/* Pie de página */
+.page-footer {
+  background-color: var(--darker-blue);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 14px;
+  position: relative;
+  border-top: 1px solid rgba(79, 195, 247, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-container {
+    padding: 25px;
+  }
+  
+  .welcome-title {
+    font-size: 24px;
+  }
+  
+  .welcome-intro-text {
+    font-size: 16px;
+  }
+  
+  .header-title {
+    font-size: 22px;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .info-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container {
+    padding: 20px 15px;
+  }
+  
+  .dashboard-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+}
